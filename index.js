@@ -8,15 +8,16 @@ const router = express.Router();
 const server = http.createServer(app);
 
 /*routes starts*/
+const UsersRoutes = require('./Users/Users.js');
+/*routes ends*/
 
-router.get('/', (req, res) => {
-	console.log("Welcome");
+
+app.get('/', (req, res) => {
+	console.log("Welcome to the base routes");
 	res.json({result: 'App is working properly'})
 });
 
-/*routes ends*/
-
-app.use(router);
+app.use('/users', UsersRoutes);
 
 server.listen(3000, () => {
 	console.log("App is running on port 3000");
