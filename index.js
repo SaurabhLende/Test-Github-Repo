@@ -10,8 +10,8 @@ const server = http.createServer(app);
 /*routes starts*/
 
 router.get('/', (req, res) => {
-	console.log("Welcome");
-	res.json({result: 'App is working properly'})
+	console.log("Welcome", __dirname);
+	res.sendFile(__dirname + '/Views/index.html');
 });
 
 /*routes ends*/
