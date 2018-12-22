@@ -17,6 +17,8 @@ router.get('/', (req, res) => {
 	res.sendFile(__dirname + '/Views/index.html');
 });
 
+app.use(router);
+
 app.use('/users', UsersRoutes);
 
 server.listen(3000, () => {
