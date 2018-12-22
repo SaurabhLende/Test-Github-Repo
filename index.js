@@ -12,9 +12,9 @@ const UsersRoutes = require('./Users/Users.js');
 /*routes ends*/
 
 
-app.get('/', (req, res) => {
-	console.log("Welcome to the base routes");
-	res.json({result: 'App is working properly'})
+router.get('/', (req, res) => {
+	console.log("Welcome", __dirname);
+	res.sendFile(__dirname + '/Views/index.html');
 });
 
 app.use('/users', UsersRoutes);
